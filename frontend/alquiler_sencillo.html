@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alquiler sencillo</title>
+    <link rel="stylesheet" href="alquiler_sencillo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="alquiler_sencillo.js" defer></script>
+</head>
+<body>
+    <!-------------------------------------->
+    <!--|estructuracion_alquiler_sencillo|-->
+    <!-------------------------------------->
+    <main class="app">
+        <header class="encabezado">
+            <h1>Alquiler Sencillo</h1>
+            <p>Elige un objeto y mira su precio al instante.</p>
+        </header>
+        <!------------------------->
+        <!--|contenido_principal|-->
+        <!------------------------->
+        <section class="paneles">
+            <section class="panel">
+                <h2>Registrar alquiler</h2>
+                <form id="formulario" novalidate>
+                    <div class="campo">
+                        <label for="cliente">Nombre del cliente</label>
+                        <input
+                            type="text"
+                            id="cliente"
+                            maxlength="40"
+                            autocomplete="off"
+                            placeholder="Escribe el nombre del cliente"
+                        >
+                    </div>
+                    <!-------------------------->
+                    <!--|seleccion_del_objeto|-->
+                    <!-------------------------->
+                    <div class="campo">
+                        <label for="objeto">Objeto para alquilar</label>
+                        <select id="objeto">
+                            <option value="">Selecciona un objeto</option>
+                        </select>
+                    </div>
+                    <!---------------------->
+                    <!--|cantidad_de_dias|-->
+                    <!---------------------->
+                    <div class="campo">
+                        <label for="dias">Cantidad de días</label>
+                        <input
+                            type="number"
+                            id="dias"
+                            value="1"
+                            min="1"
+                            max="30"
+                            step="1"
+                        >
+                    </div>
+                    <!------------------------>
+                    <!--|resumen_del_precio|-->
+                    <!------------------------>
+                    <div class="fila">
+                        <div class="dato">
+                            <span>Precio por día</span>
+                            <strong id="precioDia">$ 0</strong>
+                        </div>
+                        <div class="dato">
+                            <span>Precio total</span>
+                            <strong id="precioTotal">$ 0</strong>
+                        </div>
+                    </div>
+                    <p id="mensaje" role="alert"></p>
+                    <button type="submit" class="btn-principal">
+                        Registrar alquiler
+                    </button>
+                </form>
+            </section>
+            <!------------------------->
+            <!--|lista_de_alquileres|-->
+            <!------------------------->
+            <section class="panel">
+                <h2>Alquileres registrados</h2>
+                <p id="vacio" class="vacio">
+                    Todavía no hay alquileres registrados.
+                </p>
+                <ul id="lista" class="lista"></ul>
+                <div class="suma">
+                    <span>Total general</span>
+                    <strong id="totalGeneral">$ 0</strong>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

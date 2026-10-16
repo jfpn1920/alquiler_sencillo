@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --fondo: #f5f1e8;
+    --panel: #fff;
+    --texto: #2a2519;
+    --texto-suave: #6e6652;
+    --borde: #ddd6c3;
+    --acento: #8c5a00;
+    --crema: #fbf5e3;
+    --error: #b3261e;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+}
+/*------------------------------*/
+/*--|estilo_alquiler_sencillo|--*/
+/*------------------------------*/
+.app {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+    padding: 32px 0;
+}
+.encabezado {
+    margin-bottom: 24px;
+    text-align: center;
+}
+.encabezado h1 {
+    margin: 0 0 8px;
+}
+.encabezado p {
+    margin: 0;
+    color: var(--texto-suave);
+}
+/*---------------------------------*/
+/*--|distribucion_de_los_paneles|--*/
+/*---------------------------------*/
+.paneles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+.panel {
+    padding: 24px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+}
+.panel h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+/*----------------------------*/
+/*--|formulario_de_alquiler|--*/
+/*----------------------------*/
+#formulario {
+    display: grid;
+    gap: 18px;
+}
+.campo {
+    display: grid;
+    gap: 8px;
+}
+.campo label {
+    font-weight: 600;
+}
+.campo input,
+.campo select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    font: inherit;
+    color: var(--texto);
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+}
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid var(--acento);
+    outline-offset: 2px;
+}
+/*----------------------------*/
+/*--|resumen_de_los_precios|--*/
+/*----------------------------*/
+.fila {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+.dato {
+    display: grid;
+    gap: 8px;
+    padding: 14px;
+    background: var(--crema);
+    border-radius: 10px;
+}
+.dato span {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+.dato strong {
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+#precioTotal {
+    color: var(--acento);
+}
+/*---------------------------*/
+/*--|mensaje_de_validacion|--*/
+/*---------------------------*/
+#mensaje {
+    margin: 0;
+    color: var(--error);
+    font-size: 14px;
+}
+/*---------------------*/
+/*--|boton_principal|--*/
+/*---------------------*/
+.btn-principal {
+    padding: 13px 16px;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--acento);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.btn-principal:hover {
+    background: #704800;
+}
+/*-------------------------*/
+/*--|lista_de_alquileres|--*/
+/*-------------------------*/
+.lista {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.item {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+}
+.item-nombre {
+    font-weight: 700;
+}
+.item-detalle {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+.item-total {
+    font-weight: 700;
+    color: var(--acento);
+}
+/*-----------------------------*/
+/*--|boton_eliminar_alquiler|--*/
+/*-----------------------------*/
+.btn-eliminar {
+    justify-self: start;
+    padding: 8px 12px;
+    font: inherit;
+    color: var(--error);
+    background: transparent;
+    border: 1px solid var(--error);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-eliminar:hover {
+    color: #fff;
+    background: var(--error);
+}
+/*----------------------------*/
+/*--|mensaje_de_lista_vacia|--*/
+/*----------------------------*/
+.vacio {
+    color: var(--texto-suave);
+    text-align: center;
+}
+.vacio[hidden] {
+    display: none;
+}
+/*---------------------------------*/
+/*--|total_general_de_alquileres|--*/
+/*---------------------------------*/
+.suma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--borde);
+}
+.suma strong {
+    color: var(--acento);
+    font-size: 20px;
+}
